@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Inverters | Vaishno Devi Traders</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. GLOBAL VARIABLES & RESET --- */
+        :root {
+            /* Colors */
+            --bg-body: #f8f9fa;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --accent-primary: #ffc107; /* Gold */
+            --accent-secondary: #0b212d; /* Blue */
+            --overlay-dark: rgba(11, 33, 45, 0.85);
+
+            /* Motion */
+            --ease-luxury: cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Layout */
+            --header-height: 80px;
+            --nav-sub-height: 60px;
+            --container-width: 1100px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--header-height) + var(--nav-sub-height) + 20px);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 { color: var(--text-heading); font-weight: 700; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            width: 90%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        /* --- 2. MAIN NAVBAR (Fixed) --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-heading); }
+        .logo span { color: var(--accent-primary); }
+
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active-page { color: var(--accent-primary); }
+
+        /* --- 3. PRODUCTS HERO --- */
+        .products-hero {
+            height: 50vh;
+            min-height: 350px;
+            background-image: url('https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: var(--header-height);
+        }
+
+        .products-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--overlay-dark);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; color: white; }
+        .hero-content p { font-size: 1.2rem; opacity: 0.9; }
+
+        /* --- 4. STICKY SUB-NAV --- */
+        .sticky-product-nav {
+            position: sticky;
+            top: var(--header-height);
+            height: var(--nav-sub-height);
+            background: white;
+            z-index: 900;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .product-nav-inner {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .p-nav-link {
+            font-weight: 600;
+            color: #64748b;
+            padding: 0.5rem 0;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .p-nav-link:hover { color: var(--text-heading); }
+        .p-nav-link.active { color: var(--accent-secondary); }
+
+        .p-nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-primary);
+        }
+
+        /* --- 5. SMART EXPAND CARD SYSTEM --- */
+        .product-category { padding: 80px 0; border-bottom: 1px solid #eee; }
+        
+        .category-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-secondary);
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s var(--ease-luxury);
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+            border-color: #e2e8f0;
+        }
+
+        /* --- Card Top: Always Visible --- */
+        .pc-visible-row {
+            display: flex;
+            align-items: stretch;
+            min-height: 280px; /* Increased slightly for variant grid */
+        }
+
+        .pc-image {
+            width: 30%;
+            position: relative;
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+
+        .pc-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-luxury);
+        }
+
+        /* Loading state for images */
+        .pc-image img.loading {
+            opacity: 0.5;
+            filter: blur(5px);
+        }
+
+        .pc-info {
+            width: 70%;
+            padding: 2.5rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .pc-header h3 { font-size: 1.5rem; margin: 0; color: var(--text-heading); }
+        
+        .pc-price {
+            background: #fffbeb;
+            color: #b45309;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        /* --- VARIANT SELECTOR STYLES (NEW) --- */
+        .variant-wrapper {
+            margin-bottom: 1.5rem;
+        }
+
+        .variant-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .variant-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .variant-btn {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .variant-btn:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-1px);
+        }
+
+        .variant-btn.active {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: var(--text-heading);
+            font-weight: 700;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Short Specs (Fade out on expand) */
+        .pc-short-specs {
+            display: flex;
+            gap: 2rem;
+            margin-top: auto;
+            margin-bottom: 1rem;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .short-spec {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .short-spec span.label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; }
+        .short-spec span.val { font-weight: 600; color: var(--text-heading); }
+
+        .view-details-btn {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .view-details-btn span { transition: transform 0.3s ease; }
+
+        /* --- Card Bottom: The Accordion --- */
+        .pc-accordion-wrapper {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.5s var(--ease-luxury);
+            background: #fafbfc;
+            border-top: 1px solid transparent;
+        }
+
+        .pc-accordion-inner {
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+        }
+
+        .pc-details-grid {
+            padding: 2.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Table takes more space */
+            gap: 3rem;
+        }
+
+        /* Specs Table Styling */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .specs-table th, .specs-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .specs-table th {
+            background: #f8fafc;
+            color: #64748b;
+            font-weight: 600;
+            width: 40%;
+        }
+
+        .specs-table tr:last-child td, .specs-table tr:last-child th { border-bottom: none; }
+        .specs-table tr:nth-child(even) { background-color: #fcfcfc; }
+        
+        /* Highlight for dynamic row */
+        .spec-power {
+            font-weight: 700;
+            color: var(--accent-secondary);
+            transition: color 0.3s ease;
+        }
+
+        /* Features List */
+        .features-list h4 { font-size: 1.1rem; margin-bottom: 1rem; }
+        .features-list ul { padding-left: 1.2rem; }
+        .features-list li {
+            list-style: disc;
+            margin-bottom: 0.5rem;
+            color: #475569;
+        }
+        .features-list li::marker { color: var(--accent-primary); }
+
+        /* --- EXPANDED STATE CLASSES --- */
+        .product-card.expanded {
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+        }
+
+        .product-card.expanded .pc-short-specs {
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+        }
+
+        .product-card.expanded .pc-accordion-wrapper {
+            grid-template-rows: 1fr;
+            border-top-color: #f1f5f9;
+        }
+
+        .product-card.expanded .pc-accordion-inner {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card.expanded .view-details-btn span {
+            transform: rotate(180deg);
+        }
+
+        .product-card.expanded .pc-image img {
+            transform: scale(1.05);
+        }
+
+        /* --- FOOTER & COPYRIGHT FIX --- */
+        footer {
+            background-color: var(--text-heading);
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .footer-logo span { color: var(--accent-primary); }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a:hover { color: var(--accent-primary); }
+
+        .copyright {
+            font-size: 0.875rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            display: block;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .navbar .nav-links { display: none; }
+            .sticky-product-nav { overflow-x: auto; justify-content: flex-start; padding: 0 1rem; }
+            
+            .pc-visible-row { flex-direction: column; }
+            .pc-image { width: 100%; height: 250px; }
+            .pc-info { width: 100%; padding: 1.5rem; }
+            
+            .pc-header { flex-direction: column; gap: 0.5rem; }
+            .pc-short-specs { flex-wrap: wrap; gap: 1rem; }
+            
+            .pc-details-grid { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem; }
+            
+            /* Scrollable Table on Mobile */
+            .table-wrapper { overflow-x: auto; }
+            .specs-table { min-width: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Vaishno Devi Traders<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="#" class="active-page">Products</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="products-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Industrial Grade Power Stability.</h1>
+                    <p>Explore our range of Oil Cooled, Air Cooled, and Isolation units.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sticky Sub-Nav -->
+        <div class="sticky-product-nav">
+            <div class="container product-nav-inner">
+                <a href="#oil" class="p-nav-link">Oil Cooled</a>
+                <a href="#air" class="p-nav-link">Three Phase</a>
+                <a href="#isolation" class="p-nav-link">Single Phase</a>
+            </div>
+        </div>
+
+        <div class="product-sections-wrapper">
+
+            <!-- 1. OIL COOLED MASTER CARD -->
+            <section id="oil" class="product-category">
+                <div class="container">
+                    <div class="category-header">
+                        <h2>Oil Cooled Stabilizers</h2>
+                        <p>High capacity units for industrial heavy loads.</p>
+                    </div>
+
+                    <!-- MASTER CARD FOR OIL COOLED -->
+                    <div class="product-card" id="oil-master">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <!-- Initial dummy image -->
+                                <img src="https://picsum.photos/seed/oil-100/600/400" alt="Oil Cooled">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3 class="pc-title">100 KVA Oil Cooled Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                
+                                <!-- Variant Selector -->
+                                <div class="variant-wrapper">
+                                    <span class="variant-label">Select Capacity (KVA)</span>
+                                    <div class="variant-grid" id="grid-oil">
+                                        <!-- Buttons generated via JS -->
+                                    </div>
+                                </div>
+
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Oil Immersed</span></div>
+                                    <div class="short-spec"><span class="label">Input</span><span class="val">340V - 500V</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <!-- Body generated via JS -->
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <!-- List generated via JS -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. THREE PHASE MASTER CARD -->
+            <section id="air" class="product-category">
+                <div class="container">
+                    <div class="category-header">
+                        <h2>Three Phase Transformers</h2>
+                        <p>Compact, efficient, and perfect for indoor industrial applications.</p>
+                    </div>
+
+                    <!-- MASTER CARD FOR THREE PHASE -->
+                    <div class="product-card" id="air-master">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://picsum.photos/seed/air-10/600/400" alt="Three Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3 class="pc-title">10 KVA Three Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                
+                                <!-- Variant Selector -->
+                                <div class="variant-wrapper">
+                                    <span class="variant-label">Select Capacity (KVA)</span>
+                                    <div class="variant-grid" id="grid-air">
+                                        <!-- Buttons generated via JS -->
+                                    </div>
+                                </div>
+
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                             <!-- Body generated via JS -->
+                                             <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <!-- List generated via JS -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. SINGLE PHASE MASTER CARD -->
+            <section id="isolation" class="product-category">
+                <div class="container">
+                    <div class="category-header">
+                        <h2>Single Phase Transformers</h2>
+                        <p>Protection for sensitive medical and CNC equipment.</p>
+                    </div>
+
+                    <!-- MASTER CARD FOR SINGLE PHASE -->
+                    <div class="product-card" id="iso-master">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://picsum.photos/seed/iso-1/600/400" alt="Single Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3 class="pc-title">1 KVA Single Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+
+                                <!-- Variant Selector -->
+                                <div class="variant-wrapper">
+                                    <span class="variant-label">Select Capacity (KVA)</span>
+                                    <div class="variant-grid" id="grid-iso">
+                                        <!-- Buttons generated via JS -->
+                                    </div>
+                                </div>
+
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                             <!-- Body generated via JS -->
+                                             <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <!-- List generated via JS -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="footer-logo">Vaishno Devi Traders<span>.</span></a>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="#">Products</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <!-- CLEAN COPYRIGHT BLOCK -->
+            <p class="copyright">&copy; 2026 Vaishno Devi Traders Energy Systems. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS: Sticky Nav + Accordion Logic + Master Card Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 1. ACCORDION LOGIC ---
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // Prevent closing if clicking inside the Variant Selector
+                    if (e.target.closest('.variant-grid')) return;
+
+                    // Toggle the 'expanded' class
+                    const isExpanded = card.classList.contains('expanded');
+                    
+                    if (!isExpanded) {
+                        card.classList.add('expanded');
+                    } else {
+                        card.classList.remove('expanded');
+                    }
+                });
+            });
+
+            // --- 2. STICKY NAV SCROLL SPY ---
+            const sections = document.querySelectorAll('.product-category');
+            const navLinks = document.querySelectorAll('.p-nav-link');
+            const headerHeight = 80;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: `-${headerHeight + 20}px 0px -50% 0px`,
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        const activeLink = document.querySelector(`.p-nav-link[href="#${id}"]`);
+                        if (activeLink) activeLink.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+
+            // --- 3. MASTER CARD VARIANT LOGIC ---
+            
+            // Helper function to generate dummy content based on variant value
+            function generateVariantData(type, val, unit) {
+                // Determine category specifics
+                let brand = 'Vaishno Devi';
+                let phase = 'Three Phase';
+                let cooling = 'Oil Cooled';
+                let uniqueFeature = 'High capacity oil cooling system';
+                
+                if (type === 'air-master') {
+                    phase = 'Three Phase';
+                    cooling = 'Air Cooled';
+                    uniqueFeature = 'Compact indoor design';
+                } else if (type === 'iso-master') {
+                    phase = 'Single Phase';
+                    cooling = 'Air Cooled';
+                    uniqueFeature = '1:1 Transformation Ratio';
+                }
+
+                return {
+                    image: `https://picsum.photos/seed/${type}-${val}/600/400`, // Unique image per variant
+                    specs: [
+                        { label: 'Brand', value: brand },
+                        { label: 'Power', value: `${val} ${unit}` }, // Dynamic
+                        { label: 'Phase', value: phase },
+                        { label: 'Frequency', value: '50 Hz' },
+                        { label: 'Cooling', value: cooling },
+                        { label: 'Unique SKU', value: `VDT-${type.split('-')[0].toUpperCase()}-${val}K` }, // Dynamic SKU
+                        { label: 'Warranty', value: '5 Years' },
+                        { label: 'Min Order', value: '1 Unit' }
+                    ],
+                    features: [
+                        `Optimized for ${val} ${unit} load`, // Dynamic Feature
+                        uniqueFeature,
+                        'Digital LCD display for Input/Output monitoring',
+                        'Overload and Short-circuit protection',
+                        'Zero wave form distortion'
+                    ]
+                };
+            }
+
+            // Configuration for each Master Card
+            const masterConfig = {
+                'oil-master': {
+                    baseTitle: 'Oil Cooled Servo',
+                    gridId: 'grid-oil',
+                    unit: 'KVA',
+                    variants: [100, 150, 200, 250, 300, 350, 400, 450, 500]
+                },
+                'air-master': {
+                    baseTitle: 'Three Phase Servo',
+                    gridId: 'grid-air',
+                    unit: 'KVA',
+                    variants: [10, 15, 20, 25, 30, 40, 50, 60, 75, 90, 100]
+                },
+                'iso-master': {
+                    baseTitle: 'Single Phase Servo',
+                    gridId: 'grid-iso',
+                    unit: 'KVA',
+                    variants: [1, 2, 3, 5, 7.5, 10, 15]
+                }
+            };
+
+            // Initialize each Master Card
+            Object.keys(masterConfig).forEach(cardId => {
+                const config = masterConfig[cardId];
+                const card = document.getElementById(cardId);
+                const grid = document.getElementById(config.gridId);
+                const titleEl = card.querySelector('.pc-title');
+                const imgEl = card.querySelector('.pc-image img');
+                const tableBody = card.querySelector('.specs-table tbody');
+                const featureList = card.querySelector('.features-list ul');
+
+                if (!card || !grid) return;
+
+                // Function to update the card content
+                const updateCard = (val) => {
+                    const data = generateVariantData(cardId, val, config.unit);
+                    
+                    // 1. Update Title
+                    titleEl.textContent = `${val} ${config.unit} ${config.baseTitle}`;
+                    
+                    // 2. Update Image (with loading state)
+                    imgEl.classList.add('loading');
+                    imgEl.src = data.image;
+                    imgEl.onload = () => imgEl.classList.remove('loading');
+
+                    // 3. Update Table
+                    tableBody.innerHTML = data.specs.map(spec => 
+                        `<tr><th>${spec.label}</th><td>${spec.value}</td></tr>`
+                    ).join('');
+
+                    // 4. Update Features
+                    featureList.innerHTML = data.features.map(feat => 
+                        `<li>${feat}</li>`
+                    ).join('');
+                };
+
+                // Create Buttons
+                config.variants.forEach((val, index) => {
+                    const btn = document.createElement('button');
+                    btn.classList.add('variant-btn');
+                    btn.textContent = val;
+                    if (index === 0) btn.classList.add('active'); // Default active
+
+                    // Click Event
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Stop click from triggering accordion
+
+                        // Visuals
+                        grid.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        // Logic
+                        updateCard(val);
+                    });
+
+                    grid.appendChild(btn);
+                });
+
+                // Initialize with first variant
+                updateCard(config.variants[0]);
+            });
+
+        });
+    </script>
+</body>
+</html>

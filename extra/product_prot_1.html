@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Inverters | Vaishno Devi Traders</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. GLOBAL VARIABLES & RESET --- */
+        :root {
+            /* Colors */
+            --bg-body: #f8f9fa;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --accent-primary: #ffc107; /* Gold */
+            --accent-secondary: #0b212d; /* Blue */
+            --overlay-dark: rgba(11, 33, 45, 0.85);
+
+            /* Motion */
+            --ease-luxury: cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Layout */
+            --header-height: 80px;
+            --nav-sub-height: 60px;
+            --container-width: 1100px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--header-height) + var(--nav-sub-height) + 20px);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 { color: var(--text-heading); font-weight: 700; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            width: 90%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        /* --- 2. MAIN NAVBAR (Fixed) --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-heading); }
+        .logo span { color: var(--accent-primary); }
+
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active-page { color: var(--accent-primary); }
+
+        /* --- 3. PRODUCTS HERO --- */
+        .products-hero {
+            height: 50vh;
+            min-height: 350px;
+            background-image: url('https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: var(--header-height);
+        }
+
+        .products-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--overlay-dark);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; color: white; }
+        .hero-content p { font-size: 1.2rem; opacity: 0.9; }
+
+        /* --- 4. STICKY SUB-NAV --- */
+        .sticky-product-nav {
+            position: sticky;
+            top: var(--header-height);
+            height: var(--nav-sub-height);
+            background: white;
+            z-index: 900;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .product-nav-inner {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .p-nav-link {
+            font-weight: 600;
+            color: #64748b;
+            padding: 0.5rem 0;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .p-nav-link:hover { color: var(--text-heading); }
+        .p-nav-link.active { color: var(--accent-secondary); }
+
+        .p-nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-primary);
+        }
+
+        /* --- 5. SMART EXPAND CARD SYSTEM --- */
+        .product-category { padding: 80px 0; border-bottom: 1px solid #eee; }
+        
+        .category-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-secondary);
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s var(--ease-luxury);
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+            border-color: #e2e8f0;
+        }
+
+        /* --- Card Top: Always Visible --- */
+        .pc-visible-row {
+            display: flex;
+            align-items: stretch;
+            min-height: 250px;
+        }
+
+        .pc-image {
+            width: 30%;
+            position: relative;
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+
+        .pc-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-luxury);
+        }
+
+        .pc-info {
+            width: 70%;
+            padding: 2.5rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .pc-header h3 { font-size: 1.5rem; margin: 0; color: var(--text-heading); }
+        
+        .pc-price {
+            background: #fffbeb;
+            color: #b45309;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        /* Short Specs (Fade out on expand) */
+        .pc-short-specs {
+            display: flex;
+            gap: 2rem;
+            margin-top: 0.5rem;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .short-spec {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .short-spec span.label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; }
+        .short-spec span.val { font-weight: 600; color: var(--text-heading); }
+
+        .view-details-btn {
+            margin-top: auto;
+            align-self: flex-start;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .view-details-btn span { transition: transform 0.3s ease; }
+
+        /* --- Card Bottom: The Accordion --- */
+        .pc-accordion-wrapper {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.5s var(--ease-luxury);
+            background: #fafbfc;
+            border-top: 1px solid transparent;
+        }
+
+        .pc-accordion-inner {
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+        }
+
+        .pc-details-grid {
+            padding: 2.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Table takes more space */
+            gap: 3rem;
+        }
+
+        /* Specs Table Styling */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .specs-table th, .specs-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .specs-table th {
+            background: #f8fafc;
+            color: #64748b;
+            font-weight: 600;
+            width: 40%;
+        }
+
+        .specs-table tr:last-child td, .specs-table tr:last-child th { border-bottom: none; }
+        .specs-table tr:nth-child(even) { background-color: #fcfcfc; }
+
+        /* Features List */
+        .features-list h4 { font-size: 1.1rem; margin-bottom: 1rem; }
+        .features-list ul { padding-left: 1.2rem; }
+        .features-list li {
+            list-style: disc;
+            margin-bottom: 0.5rem;
+            color: #475569;
+        }
+        .features-list li::marker { color: var(--accent-primary); }
+
+        /* --- EXPANDED STATE CLASSES --- */
+        .product-card.expanded {
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+        }
+
+        .product-card.expanded .pc-short-specs {
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+        }
+
+        .product-card.expanded .pc-accordion-wrapper {
+            grid-template-rows: 1fr;
+            border-top-color: #f1f5f9;
+        }
+
+        .product-card.expanded .pc-accordion-inner {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card.expanded .view-details-btn span {
+            transform: rotate(180deg);
+        }
+
+        .product-card.expanded .pc-image img {
+            transform: scale(1.05);
+        }
+
+        /* --- FOOTER & COPYRIGHT FIX --- */
+        footer {
+            background-color: var(--text-heading);
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .footer-logo span { color: var(--accent-primary); }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a:hover { color: var(--accent-primary); }
+
+        .copyright {
+            font-size: 0.875rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            display: block;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .navbar .nav-links { display: none; }
+            .sticky-product-nav { overflow-x: auto; justify-content: flex-start; padding: 0 1rem; }
+            
+            .pc-visible-row { flex-direction: column; }
+            .pc-image { width: 100%; height: 250px; }
+            .pc-info { width: 100%; padding: 1.5rem; }
+            
+            .pc-header { flex-direction: column; gap: 0.5rem; }
+            .pc-short-specs { flex-wrap: wrap; gap: 1rem; }
+            
+            .pc-details-grid { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem; }
+            
+            /* Scrollable Table on Mobile */
+            .table-wrapper { overflow-x: auto; }
+            .specs-table { min-width: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Vaishno Devi Traders<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="#" class="active-page">Products</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="products-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Industrial Grade Power Stability.</h1>
+                    <p>Explore our range of Oil Cooled, Air Cooled, and Isolation units.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sticky Sub-Nav -->
+        <div class="sticky-product-nav">
+            <div class="container product-nav-inner">
+                <a href="#oil" class="p-nav-link">Oil Cooled</a>
+                <a href="#air" class="p-nav-link">Three Phase</a>
+                <a href="#isolation" class="p-nav-link">Single Phase</a>
+            </div>
+        </div>
+
+        <div class="product-sections-wrapper">
+
+            <!-- 1. OIL COOLED (Generated Range: 100-500 KVA) -->
+            <section id="oil" class="product-category">
+                <div class="container">
+                    <div class="category-header">
+                        <h2>Oil Cooled Stabilizers</h2>
+                        <p>High capacity units for industrial heavy loads.</p>
+                    </div>
+
+                    <!-- 100 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Oil Cooled">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>100 KVA Oil Cooled Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Oil Immersed</span></div>
+                                    <div class="short-spec"><span class="label">Input</span><span class="val">340V - 500V</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>100 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Heavy Duty Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Cooling Type</th><td>Oil Cooled</td></tr>
+                                            <tr><th>Warranty</th><td>5 Years</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Unit</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High capacity oil cooling system</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Ideal for heavy industrial loads</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 150 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Oil Cooled">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>150 KVA Oil Cooled Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Oil Immersed</span></div>
+                                    <div class="short-spec"><span class="label">Input</span><span class="val">340V - 500V</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>150 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Heavy Duty Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Cooling Type</th><td>Oil Cooled</td></tr>
+                                            <tr><th>Warranty</th><td>5 Years</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Unit</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High capacity oil cooling system</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Ideal for heavy industrial loads</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 200 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Oil Cooled">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>200 KVA Oil Cooled Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Oil Immersed</span></div>
+                                    <div class="short-spec"><span class="label">Input</span><span class="val">340V - 500V</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>200 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Heavy Duty Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Cooling Type</th><td>Oil Cooled</td></tr>
+                                            <tr><th>Warranty</th><td>5 Years</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Unit</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High capacity oil cooling system</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Ideal for heavy industrial loads</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 250 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Oil Cooled">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>250 KVA Oil Cooled Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Oil Immersed</span></div>
+                                    <div class="short-spec"><span class="label">Input</span><span class="val">340V - 500V</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>250 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Heavy Duty Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Cooling Type</th><td>Oil Cooled</td></tr>
+                                            <tr><th>Warranty</th><td>5 Years</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Unit</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High capacity oil cooling system</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Ideal for heavy industrial loads</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 300 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Oil Cooled">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>300 KVA Oil Cooled Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Oil Immersed</span></div>
+                                    <div class="short-spec"><span class="label">Input</span><span class="val">340V - 500V</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>300 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Heavy Duty Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Cooling Type</th><td>Oil Cooled</td></tr>
+                                            <tr><th>Warranty</th><td>5 Years</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Unit</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High capacity oil cooling system</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Ideal for heavy industrial loads</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 350 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Oil Cooled">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>350 KVA Oil Cooled Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Oil Immersed</span></div>
+                                    <div class="short-spec"><span class="label">Input</span><span class="val">340V - 500V</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>350 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Heavy Duty Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Cooling Type</th><td>Oil Cooled</td></tr>
+                                            <tr><th>Warranty</th><td>5 Years</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Unit</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High capacity oil cooling system</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Ideal for heavy industrial loads</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 400 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Oil Cooled">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>400 KVA Oil Cooled Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Oil Immersed</span></div>
+                                    <div class="short-spec"><span class="label">Input</span><span class="val">340V - 500V</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>400 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Heavy Duty Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Cooling Type</th><td>Oil Cooled</td></tr>
+                                            <tr><th>Warranty</th><td>5 Years</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Unit</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High capacity oil cooling system</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Ideal for heavy industrial loads</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 450 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Oil Cooled">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>450 KVA Oil Cooled Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Oil Immersed</span></div>
+                                    <div class="short-spec"><span class="label">Input</span><span class="val">340V - 500V</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>450 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Heavy Duty Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Cooling Type</th><td>Oil Cooled</td></tr>
+                                            <tr><th>Warranty</th><td>5 Years</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Unit</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High capacity oil cooling system</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Ideal for heavy industrial loads</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 500 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Oil Cooled">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>500 KVA Oil Cooled Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Oil Immersed</span></div>
+                                    <div class="short-spec"><span class="label">Input</span><span class="val">340V - 500V</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>500 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Heavy Duty Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Cooling Type</th><td>Oil Cooled</td></tr>
+                                            <tr><th>Warranty</th><td>5 Years</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Unit</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High capacity oil cooling system</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Ideal for heavy industrial loads</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 2. AIR COOLED (Your Specific Data) -->
+            <section id="air" class="product-category">
+                <div class="container">
+                    <div class="category-header">
+                        <h2>Three Phase Transformers</h2>
+                        <p>Compact, efficient, and perfect for indoor industrial applications.</p>
+                    </div>
+
+                    <!-- 10 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069" alt="Three Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>10 KVA Three Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>10 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Industrial / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 15 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069" alt="Three Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>15 KVA Three Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>15 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Industrial / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 20 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069" alt="Three Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>20 KVA Three Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>20 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Industrial / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 25 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069" alt="Three Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>25 KVA Three Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>25 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Industrial / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 30 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069" alt="Three Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>30 KVA Three Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>30 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Industrial / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 40 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069" alt="Three Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>40 KVA Three Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>40 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Industrial / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 50 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069" alt="Three Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>50 KVA Three Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>50 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Industrial / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 60 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069" alt="Three Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>60 KVA Three Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>60 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Industrial / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 75 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069" alt="Three Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>75 KVA Three Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>75 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Industrial / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 90 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069" alt="Three Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>90 KVA Three Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>90 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Industrial / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 100 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069" alt="Three Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>100 KVA Three Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>100 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Three Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Industrial / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 3. ISOLATION UNITS (Dummy Data) -->
+            <section id="isolation" class="product-category">
+                <div class="container">
+                    <div class="category-header">
+                        <h2>Single Phase Transformers</h2>
+                        <p>Protection for sensitive medical and CNC equipment.</p>
+                    </div>
+
+                    <!-- 1 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070" alt="Single Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>1 KVA Single Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>1 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Single Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Residential / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070" alt="Single Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>2 KVA Single Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>2 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Single Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Residential / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070" alt="Single Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>3 KVA Single Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>3 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Single Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Residential / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070" alt="Single Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>5 KVA Single Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>5 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Single Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Residential / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7.5 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070" alt="Single Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>7.5 KVA Single Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>7.5 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Single Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Residential / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070" alt="Single Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>10 KVA Single Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>10 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Single Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Residential / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 15 KVA -->
+                    <div class="product-card">
+                        <div class="pc-visible-row">
+                            <div class="pc-image">
+                                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070" alt="Single Phase">
+                            </div>
+                            <div class="pc-info">
+                                <div class="pc-header">
+                                    <h3>15 KVA Single Phase Servo</h3>
+                                    <span class="pc-price">Contact for Price</span>
+                                </div>
+                                <div class="pc-short-specs">
+                                    <div class="short-spec"><span class="label">Efficiency</span><span class="val">> 98%</span></div>
+                                    <div class="short-spec"><span class="label">Control</span><span class="val">Microcontroller</span></div>
+                                    <div class="short-spec"><span class="label">Cooling</span><span class="val">Air Cooled</span></div>
+                                </div>
+                                <div class="view-details-btn">View Details <span>⌄</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-accordion-wrapper">
+                            <div class="pc-accordion-inner">
+                                <div class="pc-details-grid">
+                                    <div class="table-wrapper">
+                                        <table class="specs-table">
+                                            <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                            <tr><th>Power</th><td>15 KVA</td></tr>
+                                            <tr><th>Phase</th><td>Single Phase</td></tr>
+                                            <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                            <tr><th>Material</th><td>Mild Steel</td></tr>
+                                            <tr><th>Automation</th><td>Automatic</td></tr>
+                                            <tr><th>Surge Protection</th><td>With Surge Protection</td></tr>
+                                            <tr><th>Usage</th><td>Residential / Commercial</td></tr>
+                                            <tr><th>Min Order Qty</th><td>1 Piece</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="features-list">
+                                        <h4>Key Features</h4>
+                                        <ul>
+                                            <li>High speed of correction (> 35V/sec)</li>
+                                            <li>Digital LCD display for Input/Output monitoring</li>
+                                            <li>Overload and Short-circuit protection</li>
+                                            <li>Compact indoor design</li>
+                                            <li>Zero wave form distortion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="footer-logo">Vaishno Devi Traders<span>.</span></a>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="#">Products</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <!-- CLEAN COPYRIGHT BLOCK -->
+            <p class="copyright">&copy; 2026 Vaishno Devi Traders Energy Systems. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS: Sticky Nav + Accordion Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 1. ACCORDION LOGIC ---
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // Prevent closing if clicking a link or button inside (optional)
+                    if(e.target.tagName === 'A') return;
+
+                    // Toggle the 'expanded' class
+                    const isExpanded = card.classList.contains('expanded');
+                    
+                    if (!isExpanded) {
+                        card.classList.add('expanded');
+                    } else {
+                        card.classList.remove('expanded');
+                    }
+                });
+            });
+
+            // --- 2. STICKY NAV SCROLL SPY ---
+            const sections = document.querySelectorAll('.product-category');
+            const navLinks = document.querySelectorAll('.p-nav-link');
+            const headerHeight = 80;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: `-${headerHeight + 20}px 0px -50% 0px`,
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        const activeLink = document.querySelector(`.p-nav-link[href="#${id}"]`);
+                        if (activeLink) activeLink.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Inverters | Vaishno Devi Traders</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. GLOBAL VARIABLES & RESET --- */
+        :root {
+            /* Colors */
+            --bg-body: #f8f9fa;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --accent-primary: #ffc107; /* Gold */
+            --accent-secondary: #0b212d; /* Blue */
+            --overlay-dark: rgba(11, 33, 45, 0.85);
+
+            /* Motion */
+            --ease-luxury: cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Layout */
+            --header-height: 80px;
+            --nav-sub-height: 60px;
+            --container-width: 1200px; /* Wider for shelves */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--header-height) + var(--nav-sub-height) + 20px);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent body scroll from wide shelves */
+        }
+
+        h1, h2, h3, h4 { color: var(--text-heading); font-weight: 700; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            width: 95%; /* Wider container for shelf feel */
+            max-width: var(--container-width);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* --- 2. MAIN NAVBAR (Fixed) --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-heading); }
+        .logo span { color: var(--accent-primary); }
+
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active-page { color: var(--accent-primary); }
+
+        /* --- 3. PRODUCTS HERO --- */
+        .products-hero {
+            height: 50vh;
+            min-height: 350px;
+            background-image: url('https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: var(--header-height);
+        }
+
+        .products-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--overlay-dark);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; color: white; }
+        .hero-content p { font-size: 1.2rem; opacity: 0.9; }
+
+        /* --- 4. STICKY SUB-NAV --- */
+        .sticky-product-nav {
+            position: sticky;
+            top: var(--header-height);
+            height: var(--nav-sub-height);
+            background: white;
+            z-index: 900;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .product-nav-inner {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .p-nav-link {
+            font-weight: 600;
+            color: #64748b;
+            padding: 0.5rem 0;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .p-nav-link:hover { color: var(--text-heading); }
+        .p-nav-link.active { color: var(--accent-secondary); }
+
+        .p-nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-primary);
+        }
+
+        /* --- 5. HORIZONTAL SHELF LAYOUT (NEW) --- */
+        .product-category { padding: 60px 0; border-bottom: 1px solid #eee; }
+        
+        .category-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-secondary);
+        }
+
+        .shelf-wrapper {
+            position: relative;
+            margin-top: 2rem;
+            /* Container allows arrows to be positioned relative to it */
+        }
+
+        .shelf-container {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 2rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 1rem 0.5rem 2rem 0.5rem; /* Padding for shadow/hover space */
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+            
+            /* Hide Scrollbar */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE 10+ */
+        }
+
+        .shelf-container::-webkit-scrollbar { 
+            display: none; /* Chrome/Safari/Webkit */
+        }
+
+        /* Navigation Arrows */
+        .nav-btn {
+            position: absolute;
+            top: 35%; /* Center vertically relative to card top */
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            color: var(--text-heading);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .nav-btn:hover {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+            opacity: 1;
+        }
+
+        .nav-btn.prev { left: -24px; }
+        .nav-btn.next { right: -24px; }
+
+        /* --- 6. PRODUCT CARD (SHELF STYLE) --- */
+        .product-card {
+            flex: 0 0 auto; /* Don't grow, don't shrink, auto basis */
+            width: 340px;   /* Fixed width for shelf consistency */
+            min-width: 340px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s var(--ease-luxury);
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            scroll-snap-align: center; /* Snap to center of shelf */
+        }
+
+        .product-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+            border-color: #e2e8f0;
+        }
+
+        /* Card Top: Vertical Stack for Shelf */
+        .pc-visible-row {
+            display: flex;
+            flex-direction: column; /* Stack image and info vertically */
+            height: 100%;
+        }
+
+        .pc-image {
+            width: 100%;
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+
+        .pc-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-luxury);
+        }
+
+        .pc-info {
+            width: 100%;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Fill remaining height */
+        }
+
+        .pc-header {
+            margin-bottom: 0.5rem;
+        }
+
+        .pc-header h3 { font-size: 1.25rem; margin: 0 0 0.5rem 0; color: var(--text-heading); }
+        
+        .pc-price {
+            background: #fffbeb;
+            color: #b45309;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        /* Short Specs */
+        .pc-short-specs {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        .short-spec span.label { font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; display: block;}
+        .short-spec span.val { font-weight: 600; color: var(--text-heading); }
+
+        .view-details-btn {
+            margin-top: auto;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .view-details-btn span { transition: transform 0.3s ease; }
+
+        /* --- Card Bottom: The Accordion --- */
+        .pc-accordion-wrapper {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.5s var(--ease-luxury);
+            background: #fafbfc;
+            border-top: 1px solid transparent;
+            width: 100%;
+        }
+
+        .pc-accordion-inner {
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+        }
+
+        .pc-details-grid {
+            padding: 1.5rem;
+            /* Stack on small card width */
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Specs Table Styling */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .specs-table th, .specs-table td {
+            padding: 8px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .specs-table th { background: #f8fafc; color: #64748b; font-weight: 600; width: 45%; }
+        .specs-table tr:last-child td, .specs-table tr:last-child th { border-bottom: none; }
+
+        /* Features List */
+        .features-list h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+        .features-list ul { padding-left: 1.2rem; }
+        .features-list li {
+            font-size: 0.85rem;
+            list-style: disc;
+            margin-bottom: 0.25rem;
+            color: #475569;
+        }
+        .features-list li::marker { color: var(--accent-primary); }
+
+        /* --- EXPANDED STATE --- */
+        .product-card.expanded {
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+        }
+
+        .product-card.expanded .pc-short-specs {
+            display: none; /* Hide short specs to save space */
+        }
+
+        .product-card.expanded .pc-accordion-wrapper {
+            grid-template-rows: 1fr;
+            border-top-color: #f1f5f9;
+        }
+
+        .product-card.expanded .pc-accordion-inner {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card.expanded .view-details-btn span {
+            transform: rotate(180deg);
+        }
+
+        /* --- FOOTER & COPYRIGHT FIX --- */
+        footer {
+            background-color: var(--text-heading);
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-logo { font-size: 1.5rem; color: white; font-weight: 700; margin-bottom: 1.5rem; display: inline-block; }
+        .footer-logo span { color: var(--accent-primary); }
+
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+        .footer-links a:hover { color: var(--accent-primary); }
+
+        .copyright { font-size: 0.875rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; margin-top: 2rem; display: block; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .navbar .nav-links { display: none; }
+            .sticky-product-nav { overflow-x: auto; justify-content: flex-start; padding: 0 1rem; }
+            
+            .container { width: 100%; padding: 0 1rem; }
+            .shelf-wrapper { margin-left: -1rem; margin-right: -1rem; } /* Bleed to edge */
+            .shelf-container { padding: 1rem 1rem 2rem 1rem; scroll-snap-type: x mandatory; }
+            
+            /* Hide arrows on mobile (touch scroll is better) */
+            .nav-btn { display: none; }
+            
+            .product-card {
+                width: 85vw; /* 85% of screen width */
+                min-width: 85vw;
+                scroll-snap-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Vaishno Devi Traders<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="#" class="active-page">Products</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="products-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Industrial Grade Power Stability.</h1>
+                    <p>Explore our range of Oil Cooled, Air Cooled, and Isolation units.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sticky Sub-Nav -->
+        <div class="sticky-product-nav">
+            <div class="container product-nav-inner">
+                <a href="#oil" class="p-nav-link">Oil Cooled</a>
+                <a href="#air" class="p-nav-link">Three Phase</a>
+                <a href="#isolation" class="p-nav-link">Single Phase</a>
+            </div>
+        </div>
+
+        <div class="product-sections-wrapper">
+
+            <!-- 1. OIL COOLED SHELF -->
+            <section id="oil" class="product-category">
+                <div class="container">
+                    <div class="category-header">
+                        <h2>Oil Cooled Stabilizers</h2>
+                        <p>High capacity units for industrial heavy loads.</p>
+                    </div>
+
+                    <div class="shelf-wrapper">
+                        <button class="nav-btn prev" onclick="scrollShelf('shelf-oil', -360)">&#8249;</button>
+                        <div class="shelf-container" id="shelf-oil">
+                            <!-- Cards Injected by JS -->
+                        </div>
+                        <button class="nav-btn next" onclick="scrollShelf('shelf-oil', 360)">&#8250;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. THREE PHASE SHELF -->
+            <section id="air" class="product-category">
+                <div class="container">
+                    <div class="category-header">
+                        <h2>Three Phase Transformers</h2>
+                        <p>Compact, efficient, and perfect for indoor industrial applications.</p>
+                    </div>
+
+                    <div class="shelf-wrapper">
+                        <button class="nav-btn prev" onclick="scrollShelf('shelf-air', -360)">&#8249;</button>
+                        <div class="shelf-container" id="shelf-air">
+                            <!-- Cards Injected by JS -->
+                        </div>
+                        <button class="nav-btn next" onclick="scrollShelf('shelf-air', 360)">&#8250;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. SINGLE PHASE SHELF -->
+            <section id="isolation" class="product-category">
+                <div class="container">
+                    <div class="category-header">
+                        <h2>Single Phase Transformers</h2>
+                        <p>Protection for sensitive medical and CNC equipment.</p>
+                    </div>
+
+                    <div class="shelf-wrapper">
+                        <button class="nav-btn prev" onclick="scrollShelf('shelf-iso', -360)">&#8249;</button>
+                        <div class="shelf-container" id="shelf-iso">
+                            <!-- Cards Injected by JS -->
+                        </div>
+                        <button class="nav-btn next" onclick="scrollShelf('shelf-iso', 360)">&#8250;</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="footer-logo">Vaishno Devi Traders<span>.</span></a>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="#">Products</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2026 Vaishno Devi Traders Energy Systems. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS: Data Generation & Logic -->
+    <script>
+        // --- DATA CONFIGURATION ---
+        const catalog = {
+            oil: {
+                targetId: 'shelf-oil',
+                baseTitle: 'Oil Cooled Servo',
+                unit: 'KVA',
+                variants: [100, 150, 200, 250, 300, 350, 400, 450, 500],
+                type: 'oil', // for seeding images
+                specs: { cooling: 'Oil Immersed', phase: 'Three Phase', unique: 'High capacity oil cooling' }
+            },
+            air: {
+                targetId: 'shelf-air',
+                baseTitle: 'Three Phase Servo',
+                unit: 'KVA',
+                variants: [10, 15, 20, 25, 30, 40, 50, 60, 75, 90, 100],
+                type: 'air',
+                specs: { cooling: 'Air Cooled', phase: 'Three Phase', unique: 'Compact indoor design' }
+            },
+            iso: {
+                targetId: 'shelf-iso',
+                baseTitle: 'Single Phase Servo',
+                unit: 'KVA',
+                variants: [1, 2, 3, 5, 7.5, 10, 15],
+                type: 'iso',
+                specs: { cooling: 'Air Cooled', phase: 'Single Phase', unique: '1:1 Transformation Ratio' }
+            }
+        };
+
+        // --- GENERATOR FUNCTION ---
+        function renderShelves() {
+            Object.values(catalog).forEach(cat => {
+                const container = document.getElementById(cat.targetId);
+                if (!container) return;
+
+                let html = '';
+                cat.variants.forEach(val => {
+                    const title = `${val} ${cat.unit} ${cat.baseTitle}`;
+                    const imgUrl = `https://picsum.photos/seed/${cat.type}-${val}/400/300`; // Seeded random images
+                    
+                    html += `
+                        <div class="product-card">
+                            <div class="pc-visible-row">
+                                <div class="pc-image">
+                                    <img src="${imgUrl}" alt="${title}" loading="lazy">
+                                </div>
+                                <div class="pc-info">
+                                    <div class="pc-header">
+                                        <h3>${title}</h3>
+                                        <span class="pc-price">Contact for Price</span>
+                                    </div>
+                                    <div class="pc-short-specs">
+                                        <div class="short-spec"><span class="label">Cooling</span><span class="val">${cat.specs.cooling}</span></div>
+                                        <div class="short-spec"><span class="label">Phase</span><span class="val">${cat.specs.phase}</span></div>
+                                    </div>
+                                    <div class="view-details-btn">View Details <span>⌄</span></div>
+                                </div>
+                            </div>
+                            <div class="pc-accordion-wrapper">
+                                <div class="pc-accordion-inner">
+                                    <div class="pc-details-grid">
+                                        <div class="table-wrapper">
+                                            <table class="specs-table">
+                                                <tr><th>Brand</th><td>Vaishno Devi</td></tr>
+                                                <tr><th>Power</th><td>${val} ${cat.unit}</td></tr>
+                                                <tr><th>Phase</th><td>${cat.specs.phase}</td></tr>
+                                                <tr><th>Frequency</th><td>50 Hz</td></tr>
+                                                <tr><th>Cooling</th><td>${cat.specs.cooling}</td></tr>
+                                                <tr><th>Warranty</th><td>5 Years</td></tr>
+                                            </table>
+                                        </div>
+                                        <div class="features-list">
+                                            <h4>Key Features</h4>
+                                            <ul>
+                                                <li>Optimized for ${val} ${cat.unit} load</li>
+                                                <li>${cat.specs.unique}</li>
+                                                <li>Digital LCD display</li>
+                                                <li>Overload protection</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+            });
+        }
+
+        // --- INTERACTION LOGIC ---
+        
+        // 1. Scroll Shelf
+        window.scrollShelf = (id, amount) => {
+            const container = document.getElementById(id);
+            if(container) {
+                container.scrollBy({ left: amount, behavior: 'smooth' });
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render Cards
+            renderShelves();
+
+            // 2. Accordion Logic (Event Delegation for dynamic items)
+            document.body.addEventListener('click', (e) => {
+                const card = e.target.closest('.product-card');
+                if (card) {
+                    // Check if clicked the nav arrows (don't expand if so - simpler safety check)
+                    if(e.target.closest('.nav-btn')) return;
+
+                    // Toggle Expanded
+                    const isExpanded = card.classList.contains('expanded');
+                    
+                    // Optional: Close others in same shelf? 
+                    // To keep shelf clean, let's close siblings in the same shelf container
+                    const shelf = card.closest('.shelf-container');
+                    if(shelf) {
+                        shelf.querySelectorAll('.product-card.expanded').forEach(c => {
+                            if(c !== card) c.classList.remove('expanded');
+                        });
+                    }
+
+                    if (!isExpanded) {
+                        card.classList.add('expanded');
+                    } else {
+                        card.classList.remove('expanded');
+                    }
+                }
+            });
+
+            // 3. Sticky Nav Scroll Spy
+            const sections = document.querySelectorAll('.product-category');
+            const navLinks = document.querySelectorAll('.p-nav-link');
+            const headerHeight = 80;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: `-${headerHeight + 20}px 0px -50% 0px`,
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        const activeLink = document.querySelector(`.p-nav-link[href="#${id}"]`);
+                        if (activeLink) activeLink.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body>
+</html>
