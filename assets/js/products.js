@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
 
     // PRODUCT DATA
     const productDatabase = {
@@ -636,6 +637,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateCard(config.variants[0]);
         }
     });
+    
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.querySelector('.mobile-menu');
     const overlay = document.querySelector('.mobile-menu-overlay');

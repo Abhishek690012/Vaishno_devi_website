@@ -67,6 +67,9 @@ img { max-width: 100%; display: block; }
     justify-content: space-between;
     align-items: center;
 }
+.navbar .container {
+    max-width: 1000px;
+}
 
 .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-heading); }
 .logo span { color: var(--accent-primary); }
@@ -119,6 +122,7 @@ img { max-width: 100%; display: block; }
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     border-bottom: 1px solid #eee;
     display: flex;
+    overflow: visible;
     align-items: center;
     transition: all 0.3s ease;
 }
@@ -127,6 +131,17 @@ img { max-width: 100%; display: block; }
     display: flex;
     gap: 2rem;
     justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .product-nav-inner {
+        justify-content: flex-start;
+        min-width: max-content;
+    }
+
+    .p-nav-link {
+        white-space: nowrap;
+    }
 }
 
 .p-nav-link {
@@ -143,7 +158,7 @@ img { max-width: 100%; display: block; }
 .p-nav-link.active::after {
     content: '';
     position: absolute;
-    bottom: -18px;
+    bottom: -10px;
     left: 0;
     width: 100%;
     height: 3px;
@@ -441,7 +456,7 @@ footer {
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .navbar .nav-links { display: none; }
-    .sticky-product-nav { overflow-x: auto; justify-content: flex-start; padding: 0 1rem; }
+    .sticky-product-nav { overflow-x: auto; justify-content: flex-start; padding: 0 1rem;-webkit-overflow-scrolling: touch;}
     
     .pc-visible-row { flex-direction: column; }
     .pc-image { width: 100%; height: 250px; }
