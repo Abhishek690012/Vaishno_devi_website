@@ -476,6 +476,8 @@ footer {
 
 .hamburger {
     display: none;
+    position: relative;
+    z-index: 1001; /* above navbar */
     background: none;
     border: none;
     cursor: pointer;
@@ -488,6 +490,7 @@ footer {
     margin: 5px 0;
     background: var(--text-heading);
 }
+
 
 /* Overlay */
 .mobile-menu-overlay {
