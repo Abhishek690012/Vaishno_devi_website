@@ -456,3 +456,116 @@ footer {
     .table-wrapper { overflow-x: auto; }
     .specs-table { min-width: 400px; }
 }
+
+/* ================= MOBILE NAV ================= */
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 5px 0;
+    background: var(--text-heading);
+}
+
+/* Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 998;
+}
+
+/* Drawer */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: white;
+    z-index: 999;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+}
+
+.mobile-menu a {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.close-menu {
+    align-self: flex-end;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Active state */
+.menu-open .mobile-menu {
+    right: 0;
+}
+
+.menu-open .mobile-menu-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Scroll lock */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .products-hero {
+        height: 40vh;          /* Fix crushed hero */
+        min-height: 260px;
+        padding-top: calc(var(--header-height) + 10px);
+        background-attachment: scroll;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-header h2 {
+        font-size: 1.6rem;     /* Reduced from 2rem */
+    }
+
+    .category-header p {
+        font-size: 0.95rem;
+    }
+}

@@ -54,4 +54,26 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.style.background = "rgba(255, 255, 255, 0.95)";
         }
     });
+
+    // --- Mobile Menu Logic ---
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    const closeBtn = document.querySelector('.close-menu');
+
+    const closeMenu = () => {
+        document.body.classList.remove('menu-open');
+    };
+
+    hamburger?.addEventListener('click', () => {
+        document.body.classList.add('menu-open');
+    });
+
+    overlay?.addEventListener('click', closeMenu);
+    closeBtn?.addEventListener('click', closeMenu);
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
 });

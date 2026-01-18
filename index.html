@@ -19,13 +19,19 @@
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">Vaishno Devi Traders<span>.</span></a>
-            <ul class="nav-links">
+            <ul class="nav-links desktop-nav">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <!-- UPDATED: Pointing to external file products.html -->
                 <li><a href="products.html">Products</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
+
+            <!-- Hamburger (mobile only) -->
+            <button class="hamburger" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -191,5 +197,16 @@
 
     <!-- JavaScript Link -->
     <script src="assets/js/script.js"></script>
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu-overlay"></div>
+
+    <nav class="mobile-menu">
+        <button class="close-menu">&times;</button>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="products.html">Products</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
 </body>
 </html>

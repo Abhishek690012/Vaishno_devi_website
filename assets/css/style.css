@@ -477,7 +477,7 @@ footer {
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .highlight-card {
@@ -506,5 +506,114 @@ footer {
 
     .highlight-card:hover {
         transform: none;
+    }
+}
+
+/* MOBILE NAV */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 5px 0;
+    background: var(--text-heading);
+}
+
+/* Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 998;
+}
+
+/* Drawer */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: white;
+    z-index: 999;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+}
+
+.mobile-menu a {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.close-menu {
+    align-self: flex-end;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Active state */
+.menu-open .mobile-menu {
+    right: 0;
+}
+
+.menu-open .mobile-menu-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Scroll lock */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* ================= MOBILE HERO FIX ================= */
+@media (max-width: 768px) {
+    .hero {
+        height: 85vh;          /* Fix mobile viewport bug */
+        min-height: 520px;     /* Prevent over-collapse */
+        background-attachment: scroll; /* Fix iOS jitter */
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;     /* Already correct, reaffirm */
+        line-height: 1.15;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* ================= MOBILE SECTION SPACING ================= */
+@media (max-width: 768px) {
+    :root {
+        --spacing-section: 80px; /* Reduce vertical gaps on mobile */
     }
 }
