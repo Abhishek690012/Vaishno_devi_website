@@ -82,7 +82,7 @@ img { max-width: 100%; display: block; }
 .products-hero {
     height: 50vh;
     min-height: 350px;
-    background-image: url('https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070&auto=format&fit=crop');
+    background-image: url('../../images/B_prod.png');
     background-size: cover;
     background-position: center;
     position: relative;

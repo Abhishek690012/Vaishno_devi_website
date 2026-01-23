@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         'oil-master': {
             '100': {
-                image: 'images/oil_cooled_100kva.jpg', 
+                image: 'images/oil_1.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '100 KVA' },
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '150': {
-                image: 'images/oil_cooled_150kva.jpg', 
+                image: 'images/oil_1.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '150 KVA' }, 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '200': {
-                image: 'images/oil_cooled_200kva.jpg', 
+                image: 'images/oil_1.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '200 KVA' }, 
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '250': {
-                image: 'images/oil_cooled_200kva.jpg', 
+                image: 'images/oil_2.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '250 KVA' }, // Fixed power label
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '300': {
-                image: 'images/oil_cooled_200kva.jpg', 
+                image: 'images/oil_2.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '300 KVA' }, // Fixed power label
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '350': {
-                image: 'images/oil_cooled_200kva.jpg', 
+                image: 'images/oil_2.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '350 KVA' }, // Fixed power label
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '400': {
-                image: 'images/oil_cooled_200kva.jpg', 
+                image: 'images/oil_3.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '400 KVA' }, // Fixed power label
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '450': {
-                image: 'images/oil_cooled_200kva.jpg', 
+                image: 'images/oil_3.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '450 KVA' }, // Fixed power label
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '500': {
-                image: 'images/oil_cooled_200kva.jpg', 
+                image: 'images/oil_3.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '500 KVA' }, // Fixed power label
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- THREE PHASE (AIR) DATA ---
         'air-master': {
             '10': {
-                image: 'images/air_cooled_10kva.jpg',
+                image: 'images/3_0.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -239,9 +239,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Low maintenance (no oil)',
                     'Fast response (<10ms)'
                 ]
-            },
+            },  
             '15': {
-                image: 'images/air_cooled_10kva.jpg',
+                image: 'images/3_0.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '20': {
-                image: 'images/air_cooled_10kva.jpg',
+                image: 'images/3_1.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '25': {
-                image: 'images/air_cooled_10kva.jpg',
+                image: 'images/3_1.png',
                 specs: [
 
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '30': {
-                image: 'images/air_cooled_10kva.jpg',
+                image: 'images/3_2.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '40': {
-                image: 'images/air_cooled_10kva.jpg',
+                image: 'images/3_2.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '45': {
-                image: 'images/air_cooled_10kva.jpg',
+                image: 'images/3_3.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '50': {
-                image: 'images/air_cooled_10kva.jpg',
+                image: 'images/3_3.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -408,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '60': {
-                image: 'images/air_cooled_10kva.jpg',
+                image: 'images/3_4.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '75': {
-                image: 'images/air_cooled_10kva.jpg',
+                image: 'images/3_4.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '90': {
-                image: 'images/air_cooled_10kva.jpg',
+                image: 'images/3_5.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -477,7 +477,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '100': {
-                image: 'images/air_cooled_10kva.jpg',
+                image: 'images/3_6.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -504,19 +504,178 @@ document.addEventListener('DOMContentLoaded', () => {
         //SINGLE PHASE 
         'iso-master': {
             '1': {
-                image: 'images/single_phase_1kva.jpg',
+                image: 'images/1_1.png', // Ensure you have this image
                 specs: [
+                    { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '1 KVA' },
                     { label: 'Phase', value: 'Single Phase' },
+                    { label: 'Input Voltage', value: '160V - 260V' },
+                    { label: 'Output Voltage', value: '230V ± 1%' },
                     { label: 'Cooling', value: 'Air Cooled' },
-                    { label: 'Input Voltage', value: '170V - 270V' },
-                    { label: 'Warranty', value: '1 Year' }
+                    { label: 'Efficiency', value: '> 95%' },
+                    { label: 'Ambient Temperature', value: '0-45° Celsius' },
+                    { label: 'Surge Protection', value: 'With Surge Protection' },
+                    { label: 'Frequency', value: '50 Hz' },
+                    { label: 'Automation Grade', value: 'Automatic' },
+                    { label: 'Correction Speed', value: '> 60V/sec' },
+                    { label: 'Warranty', value: '1 Year' },
+                    { label: 'Country of Origin', value: 'Made in India' }
                 ],
                 features: [
-                    'Perfect for home appliances',
-                    'Wall mountable design',
-                    'Silent operation'
+                    'Microprocessor based control circuit',
+                    'Digital display for Input/Output Voltage',
+                    'High voltage cut-off protection'
+                ]
+            },
+            '2': {
+                image: 'images/1_1.png', 
+                specs: [
+                    { label: 'Minimum Order Quantity', value: '1' },
+                    { label: 'Brand', value: 'Cyber' },
+                    { label: 'Power', value: '2 KVA' },
+                    { label: 'Phase', value: 'Single Phase' },
+                    { label: 'Input Voltage', value: '160V - 260V' },
+                    { label: 'Output Voltage', value: '230V ± 1%' },
+                    { label: 'Cooling', value: 'Air Cooled' },
+                    { label: 'Efficiency', value: '> 95%' },
+                    { label: 'Ambient Temperature', value: '0-45° Celsius' },
+                    { label: 'Surge Protection', value: 'With Surge Protection' },
+                    { label: 'Frequency', value: '50 Hz' },
+                    { label: 'Automation Grade', value: 'Automatic' },
+                    { label: 'Correction Speed', value: '> 60V/sec' },
+                    { label: 'Warranty', value: '1 Year' },
+                    { label: 'Country of Origin', value: 'Made in India' }
+                ],
+                features: [
+                    'Compact design suitable for homes',
+                    'Overload protection with auto-reset',
+                    'Zero waveform distortion'
+                ]
+            },
+            '3': {
+                image: 'images/1_2.png', 
+                specs: [
+                    { label: 'Minimum Order Quantity', value: '1' },
+                    { label: 'Brand', value: 'Cyber' },
+                    { label: 'Power', value: '3 KVA' },
+                    { label: 'Phase', value: 'Single Phase' },
+                    { label: 'Input Voltage', value: '160V - 260V' },
+                    { label: 'Output Voltage', value: '230V ± 1%' },
+                    { label: 'Cooling', value: 'Air Cooled' },
+                    { label: 'Efficiency', value: '> 95%' },
+                    { label: 'Ambient Temperature', value: '0-45° Celsius' },
+                    { label: 'Surge Protection', value: 'With Surge Protection' },
+                    { label: 'Frequency', value: '50 Hz' },
+                    { label: 'Automation Grade', value: 'Automatic' },
+                    { label: 'Correction Speed', value: '> 60V/sec' },
+                    { label: 'Warranty', value: '1 Year' },
+                    { label: 'Country of Origin', value: 'Made in India' }
+                ],
+                features: [
+                    'Ideal for treadmills and deep freezers',
+                    'Fast correction rate (>60V/sec)',
+                    'Short circuit protection (MCB)'
+                ]
+            },
+            '5': {
+                image: 'images/1_2.png', 
+                specs: [
+                    { label: 'Minimum Order Quantity', value: '1' },
+                    { label: 'Brand', value: 'Cyber' },
+                    { label: 'Power', value: '5 KVA' },
+                    { label: 'Phase', value: 'Single Phase' },
+                    { label: 'Input Voltage', value: '160V - 260V' },
+                    { label: 'Output Voltage', value: '230V ± 1%' },
+                    { label: 'Cooling', value: 'Air Cooled' },
+                    { label: 'Efficiency', value: '> 97%' },
+                    { label: 'Ambient Temperature', value: '0-45° Celsius' },
+                    { label: 'Surge Protection', value: 'With Surge Protection' },
+                    { label: 'Frequency', value: '50 Hz' },
+                    { label: 'Automation Grade', value: 'Automatic' },
+                    { label: 'Correction Speed', value: '> 50V/sec' },
+                    { label: 'Warranty', value: '1 Year' },
+                    { label: 'Country of Origin', value: 'Made in India' }
+                ],
+                features: [
+                    'Suitable for whole-house main line',
+                    'Bypass switch for uninterrupted supply',
+                    'High efficiency toroidal transformer'
+                ]
+            },
+            '7.5': {
+                image: 'images/1_3.png', 
+                specs: [
+                    { label: 'Minimum Order Quantity', value: '1' },
+                    { label: 'Brand', value: 'Cyber' },
+                    { label: 'Power', value: '7.5 KVA' },
+                    { label: 'Phase', value: 'Single Phase' },
+                    { label: 'Input Voltage', value: '160V - 260V' },
+                    { label: 'Output Voltage', value: '230V ± 1%' },
+                    { label: 'Cooling', value: 'Air Cooled' },
+                    { label: 'Efficiency', value: '> 97%' },
+                    { label: 'Ambient Temperature', value: '0-45° Celsius' },
+                    { label: 'Surge Protection', value: 'With Surge Protection' },
+                    { label: 'Frequency', value: '50 Hz' },
+                    { label: 'Automation Grade', value: 'Automatic' },
+                    { label: 'Correction Speed', value: '> 50V/sec' },
+                    { label: 'Warranty', value: '1 Year' },
+                    { label: 'Country of Origin', value: 'Made in India' }
+                ],
+                features: [
+                    'Perfect for large AC units (up to 4 ton)',
+                    'Digital LCD status display',
+                    'Heavy duty terminal connectors'
+                ]
+            },
+            '10': {
+                image: 'images/1_3.png', 
+                specs: [
+                    { label: 'Minimum Order Quantity', value: '1' },
+                    { label: 'Brand', value: 'Cyber' },
+                    { label: 'Power', value: '10 KVA' },
+                    { label: 'Phase', value: 'Single Phase' },
+                    { label: 'Input Voltage', value: '160V - 260V' },
+                    { label: 'Output Voltage', value: '230V ± 1%' },
+                    { label: 'Cooling', value: 'Air Cooled' },
+                    { label: 'Efficiency', value: '> 98%' },
+                    { label: 'Ambient Temperature', value: '0-45° Celsius' },
+                    { label: 'Surge Protection', value: 'With Surge Protection' },
+                    { label: 'Frequency', value: '50 Hz' },
+                    { label: 'Automation Grade', value: 'Automatic' },
+                    { label: 'Correction Speed', value: '> 40V/sec' },
+                    { label: 'Warranty', value: '1 Year' },
+                    { label: 'Country of Origin', value: 'Made in India' }
+                ],
+                features: [
+                    'Designed for small office/home office',
+                    'Intelligent time delay system',
+                    'Advanced thermal overload protection'
+                ]
+            },
+            '15': {
+                image: 'images/1_3.png', 
+                specs: [
+                    { label: 'Minimum Order Quantity', value: '1' },
+                    { label: 'Brand', value: 'Cyber' },
+                    { label: 'Power', value: '15 KVA' },
+                    { label: 'Phase', value: 'Single Phase' },
+                    { label: 'Input Voltage', value: '160V - 260V' },
+                    { label: 'Output Voltage', value: '230V ± 1%' },
+                    { label: 'Cooling', value: 'Air Cooled' },
+                    { label: 'Efficiency', value: '> 98%' },
+                    { label: 'Ambient Temperature', value: '0-45° Celsius' },
+                    { label: 'Surge Protection', value: 'With Surge Protection' },
+                    { label: 'Frequency', value: '50 Hz' },
+                    { label: 'Automation Grade', value: 'Automatic' },
+                    { label: 'Correction Speed', value: '> 40V/sec' },
+                    { label: 'Warranty', value: '1 Year' },
+                    { label: 'Country of Origin', value: 'Made in India' }
+                ],
+                features: [
+                    'Suitable for large villas/duplex homes',
+                    'Robust chassis with castor wheels',
+                    'Precise output for sensitive electronics'
                 ]
             }
 
@@ -539,7 +698,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'iso-master': {
             baseTitle: 'Single Phase Servo',
             gridId: 'grid-iso',
-            variants: [1]
+            variants: [1,2,3,5,7.5,10,15]
         }
     };
 
