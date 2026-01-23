@@ -34,6 +34,7 @@ body {
     background-color: var(--bg-body);
     color: var(--text-main);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 { color: var(--text-heading); font-weight: 700; }
@@ -45,6 +46,9 @@ img { max-width: 100%; display: block; }
     width: 90%;
     max-width: var(--container-width);
     margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
 }
 
 /* --- 2. MAIN NAVBAR (Fixed) --- */
