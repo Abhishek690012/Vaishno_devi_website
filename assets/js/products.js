@@ -408,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '60': {
-                image: 'images/3_4.png',
+                image: 'images/3_5.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '75': {
-                image: 'images/3_4.png',
+                image: 'images/3_5.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '90': {
-                image: 'images/3_5.png',
+                image: 'images/3_6.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
                     { label: 'Brand', value: 'Cyber' },
