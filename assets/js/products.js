@@ -3,7 +3,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // PRODUCT DATA
     const productDatabase = {
-        
+        'cvt-master': {
+            '1': {
+                image: 'images/cvt_1kva.jpg',
+                specs: [
+                { label: 'Brand', value: 'Cyber' },
+                { label: 'Power', value: '1 KVA' },
+                { label: 'Phase', value: 'Single Phase' },
+                { label: 'Type', value: 'Constant Voltage Transformer' },
+                { label: 'Input Voltage', value: '170–270V' },
+                { label: 'Output Voltage', value: '230V ±1%' },
+                { label: 'Cooling', value: 'Air Cooled' },
+                { label: 'Efficiency', value: '95%' },
+                { label: 'Warranty', value: '1 Year' }
+                ],
+                features: [
+                'Ideal for medical & lab equipment',
+                'Noise filtering & spike suppression',
+                'Instant voltage regulation'
+                ]
+            },
+
+            '2': {
+                image: 'images/cvt_2kva.jpg',
+                specs: [
+                { label: 'Brand', value: 'Cyber' },
+                { label: 'Power', value: '2 KVA' },
+                { label: 'Phase', value: 'Single Phase' },
+                { label: 'Type', value: 'Constant Voltage Transformer' },
+                { label: 'Input Voltage', value: '170–270V' },
+                { label: 'Output Voltage', value: '230V ±1%' },
+                { label: 'Cooling', value: 'Air Cooled' },
+                { label: 'Efficiency', value: '96%' },
+                { label: 'Warranty', value: '1 Year' }
+                ],
+                features: [
+                'Better load handling',
+                'Excellent surge protection',
+                'Long service life'
+                ]
+            },
+
+            '3': {
+                image: 'images/cvt_3kva.jpg',
+                specs: [
+                { label: 'Brand', value: 'Cyber' },
+                { label: 'Power', value: '3 KVA' },
+                { label: 'Phase', value: 'Single Phase' },
+                { label: 'Type', value: 'Constant Voltage Transformer' },
+                { label: 'Input Voltage', value: '170–270V' },
+                { label: 'Output Voltage', value: '230V ±1%' },
+                { label: 'Cooling', value: 'Air Cooled' },
+                { label: 'Efficiency', value: '97%' },
+                { label: 'Warranty', value: '1 Year' }
+                ],
+                features: [
+                'Suitable for CNC & office loads',
+                'Zero waveform distortion',
+                'Highly reliable ferroresonant design'
+                ]
+            }
+            },
         'oil-master': {
             '100': {
                 image: 'images/oil_1.png', 
@@ -699,7 +759,12 @@ document.addEventListener('DOMContentLoaded', () => {
             baseTitle: 'Single Phase Servo',
             gridId: 'grid-iso',
             variants: [1,2,3,5,7.5,10,15]
-        }
+        },
+        'cvt-master': {
+            baseTitle: 'CVT Transformer',
+            gridId: 'grid-cvt',
+            variants: [1, 2, 3]
+        },
     };
 
 
