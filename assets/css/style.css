@@ -592,6 +592,7 @@ body.menu-open {
     }
 }
 
+/* ================= MOBILE HERO FIX ================= */
 @media (max-width: 768px) {
     .hero {
         height: 85vh;          /* Fix mobile viewport bug */
@@ -610,51 +611,11 @@ body.menu-open {
     }
 }
 
+/* ================= MOBILE SECTION SPACING ================= */
 @media (max-width: 768px) {
     :root {
         --spacing-section: 80px; /* Reduce vertical gaps on mobile */
     }
 }
 
-@media (max-width: 768px) {
 
-    /* reduce heights */
-    :root {
-        --header-height: 60px;
-        --nav-sub-height: 90px;
-    }
-
-    /* make subnav taller for grid */
-    .sticky-product-nav {
-        height: auto;
-        padding: 8px 0;
-    }
-
-    /* turn row → grid */
-    .product-nav-inner {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        width: 100%;
-    }
-
-    /* style each button nicely */
-    .p-nav-link {
-        text-align: center;
-        padding: 8px 6px;
-        font-size: 0.9rem;
-        background: #f1f5f9;
-        border-radius: 6px;
-        font-weight: 600;
-    }
-
-    .p-nav-link.active {
-        background: var(--accent-primary);
-        color: var(--text-heading);
-    }
-
-    /* remove underline bar (not needed in grid) */
-    .p-nav-link.active::after {
-        display: none;
-    }
-}
