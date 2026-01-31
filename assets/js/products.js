@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const productDatabase = {
         'cvt-master': {
             '1': {
-                image: 'images/cvt_1kva.jpg',
+                price: "Request Quote",
+                image: 'images/cvt.png',
                 specs: [
+                
                 { label: 'Brand', value: 'Cyber' },
                 { label: 'Power', value: '1 KVA' },
                 { label: 'Phase', value: 'Single Phase' },
@@ -23,49 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Instant voltage regulation'
                 ]
             },
+        },
 
-            '2': {
-                image: 'images/cvt_2kva.jpg',
-                specs: [
-                { label: 'Brand', value: 'Cyber' },
-                { label: 'Power', value: '2 KVA' },
-                { label: 'Phase', value: 'Single Phase' },
-                { label: 'Type', value: 'Constant Voltage Transformer' },
-                { label: 'Input Voltage', value: '170–270V' },
-                { label: 'Output Voltage', value: '230V ±1%' },
-                { label: 'Cooling', value: 'Air Cooled' },
-                { label: 'Efficiency', value: '96%' },
-                { label: 'Warranty', value: '1 Year' }
-                ],
-                features: [
-                'Better load handling',
-                'Excellent surge protection',
-                'Long service life'
-                ]
-            },
-
-            '3': {
-                image: 'images/cvt_3kva.jpg',
-                specs: [
-                { label: 'Brand', value: 'Cyber' },
-                { label: 'Power', value: '3 KVA' },
-                { label: 'Phase', value: 'Single Phase' },
-                { label: 'Type', value: 'Constant Voltage Transformer' },
-                { label: 'Input Voltage', value: '170–270V' },
-                { label: 'Output Voltage', value: '230V ±1%' },
-                { label: 'Cooling', value: 'Air Cooled' },
-                { label: 'Efficiency', value: '97%' },
-                { label: 'Warranty', value: '1 Year' }
-                ],
-                features: [
-                'Suitable for CNC & office loads',
-                'Zero waveform distortion',
-                'Highly reliable ferroresonant design'
-                ]
-            }
-            },
         'oil-master': {
             '100': {
+                price: "10",
                 image: 'images/oil_1.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
@@ -90,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '150': {
+                price: "10",
                 image: 'images/oil_1.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
@@ -113,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '200': {
+                price: "10",
                 image: 'images/oil_1.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
@@ -136,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '250': {
+                price: "10",
                 image: 'images/oil_2.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
@@ -159,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '300': {
+                price: "10",
                 image: 'images/oil_2.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
@@ -182,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '350': {
+                price: "10",
                 image: 'images/oil_2.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
@@ -205,6 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '400': {
+                price: "10",
                 image: 'images/oil_3.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
@@ -228,6 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '450': {
+                price: "10",
                 image: 'images/oil_3.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
@@ -251,6 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '500': {
+                price: "10",
                 image: 'images/oil_3.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
@@ -278,6 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- THREE PHASE (AIR) DATA ---
         'air-master': {
             '10': {
+                price: "10",
                 image: 'images/3_0.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -296,11 +269,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 ],
                 features: [
                     'Compact design for medical labs',
-                    'Low maintenance (no oil)',
+                    'Low maintenance',
                     'Fast response (<10ms)'
                 ]
             },  
             '15': {
+                price: "10",
                 image: 'images/3_0.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -324,6 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '20': {
+                price: "10",
                 image: 'images/3_1.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -347,6 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '25': {
+                price: "10",
                 image: 'images/3_1.png',
                 specs: [
 
@@ -371,6 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '30': {
+                price: "10",
                 image: 'images/3_2.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -398,6 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '40': {
+                price: "10",
                 image: 'images/3_2.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -422,6 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '45': {
+                price: "10",
                 image: 'images/3_3.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -445,6 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '50': {
+                price: "10",
                 image: 'images/3_3.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -468,6 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '60': {
+                price: "10",
                 image: 'images/3_5.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -491,6 +472,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '75': {
+                price: "10",
                 image: 'images/3_5.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -514,6 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '90': {
+                price: "10",
                 image: 'images/3_6.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -537,6 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '100': {
+                price: "10",
                 image: 'images/3_6.png',
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -564,6 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //SINGLE PHASE 
         'iso-master': {
             '1': {
+                price: "10",
                 image: 'images/1_1.png', // Ensure you have this image
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -589,6 +574,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '2': {
+                price: "10",
                 image: 'images/1_1.png', 
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -614,6 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '3': {
+                price: "10",
                 image: 'images/1_2.png', 
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -639,6 +626,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '5': {
+                price: "10",
                 image: 'images/1_2.png', 
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -664,6 +652,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '7.5': {
+                price: "10",
                 image: 'images/1_3.png', 
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -689,6 +678,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '10': {
+                price: "10",
                 image: 'images/1_3.png', 
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -714,6 +704,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             '15': {
+                price: "10",
                 image: 'images/1_3.png', 
                 specs: [
                     { label: 'Minimum Order Quantity', value: '1' },
@@ -746,24 +737,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // BUTTON ORDER
     const masterConfig = {
         'oil-master': {
-            baseTitle: 'Oil Cooled Servo',
+            baseTitle: 'Oil Cooled Servo Controlled Voltage Stabilizers',
             gridId: 'grid-oil',
             variants: [100, 150,200,250,300,350,400,450,500,] 
         },
         'air-master': {
-            baseTitle: 'Three Phase Servo',
+            baseTitle: 'Three Phase Servo Controlled Voltage Stabilizers',
             gridId: 'grid-air',
             variants: [10, 15, 20, 25, 30, 40, 45, 50, 60, 75, 90, 100]
         },
         'iso-master': {
-            baseTitle: 'Single Phase Servo',
+            baseTitle: 'Single Phase Servo Controlled Voltage Stabilizers',
             gridId: 'grid-iso',
             variants: [1,2,3,5,7.5,10,15]
         },
         'cvt-master': {
-            baseTitle: 'CVT Transformer',
-            gridId: 'grid-cvt',
-            variants: [1, 2, 3]
+            baseTitle: 'Constant Voltage Transformer',
+            gridId: null,
+            variants: []
         },
     };
 
@@ -798,10 +789,11 @@ document.addEventListener('DOMContentLoaded', () => {
     Object.keys(masterConfig).forEach(cardId => {
         const config = masterConfig[cardId];
         const card = document.getElementById(cardId);
-        const grid = document.getElementById(config.gridId);
+        const grid = config.gridId ? document.getElementById(config.gridId) : null;
+        const priceEl = card.querySelector('.pc-price');
         
         // Safety Check: If HTML elements are missing, skip
-        if (!card || !grid) return;
+        if (!card) return;
 
         const titleEl = card.querySelector('.pc-title');
         const imgEl = card.querySelector('.pc-image img');
@@ -821,7 +813,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // 1. Update Title
             titleEl.textContent = `${data.specs.find(s => s.label === 'Power').value} ${config.baseTitle}`;
-            
+            // if (priceEl) {
+            //     if (priceEl && data.price) {
+            //         priceEl.textContent = data.price;
+            //     }
+            // }
+
             // 2. Update Image
             imgEl.classList.add('loading');
             imgEl.src = data.image;
@@ -859,6 +856,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Load Default (First Item)
         if (config.variants.length > 0) {
             updateCard(config.variants[0]);
+        } else {
+            updateCard(1); // CVT default
         }
     });
     

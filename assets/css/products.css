@@ -1,12 +1,12 @@
 /* --- 1. GLOBAL VARIABLES & RESET --- */
 :root {
     /* Colors */
-    --bg-body: #f8f9fa;
-    --bg-white: #ffffff;
-    --text-main: #334155;
-    --text-heading: #0f172a;
-    --accent-primary: #ffc107; /* Gold */
-    --accent-secondary: #0b212d; /* Blue */
+    --bg-body: #f8f9fa; /*Main page background*/
+    --bg-white: #ffffff;    /*card and surface background*/
+    --text-main: #334155;   /*Normal paragraph text*/
+    --text-heading: #0f172a;    /*headings and strong text*/
+    --accent-primary: #ffc107; /* Gold */ /*Highlight, brand color*/
+    --accent-secondary: #0b212d; /* Blue */ /*secondary band color*/
     --overlay-dark: rgba(11, 33, 45, 0.85);
 
     /* Motion */
@@ -251,6 +251,18 @@ img { max-width: 100%; display: block; }
     border-radius: 4px;
     font-size: 1.1rem;
     white-space: nowrap;
+}
+
+.quote-btn {
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.quote-btn:hover {
+    background: var(--accent-primary);
+    color: var(--text-heading);
+    transform: translateY(-2px);
 }
 
 /* --- VARIANT SELECTOR STYLES (NEW) --- */
