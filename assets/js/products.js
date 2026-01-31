@@ -773,15 +773,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerHeight = 80;
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navLinks.forEach(link => link.classList.remove('active'));
-                const activeLink = document.querySelector(`.p-nav-link[href="#${id}"]`);
-                if (activeLink) activeLink.classList.add('active');
-            }
-        });
-    }, { rootMargin: `-${headerHeight + 20}px 0px -50% 0px` });
+        let visible = entries
+            .filter(e => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (!visible) return;
+
+        const id = visible.target.id;
+
+        navLinks.forEach(link => link.classList.remove('active'));
+
+        const activeLink = document.querySelector(`.p-nav-link[href="#${id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+
+    }, {
+        threshold: 0.4   // section must be 40% visible
+    });
 
     sections.forEach(section => observer.observe(section));
 
