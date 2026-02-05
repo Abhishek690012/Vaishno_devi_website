@@ -159,7 +159,7 @@ img {
     align-items: center;
     position: relative;
 
-    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.42)), url('../../images/home_background.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.42)), url('../../images/background.jpeg');
 
     background-size: cover;
     background-position: center;
