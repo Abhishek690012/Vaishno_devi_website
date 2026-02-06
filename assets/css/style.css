@@ -619,4 +619,16 @@ body.menu-open {
     }
 }
 
+.whatsapp-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    filter: invert(48%) sepia(90%) saturate(600%) hue-rotate(85deg);
+}
+
+.disclaimer {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 1rem;
+}
 

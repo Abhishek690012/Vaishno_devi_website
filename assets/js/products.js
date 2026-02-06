@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'oil-master': {
             '100': {
                 price: "10",
-                image: 'images/oil_1.png', 
+                image: 'images/oil_cooled.jpeg', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '100 KVA' },
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             '150': {
                 price: "10",
-                image: 'images/oil_1.png', 
+                image: 'images/oil_cooled.jpeg', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '150 KVA' }, 
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             '200': {
                 price: "10",
-                image: 'images/oil_1.png', 
+                image: 'images/oil_cooled.jpeg', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '200 KVA' }, 
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             '250': {
                 price: "10",
-                image: 'images/oil_2.png', 
+                image: 'images/oil_cooled.jpeg', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '250 KVA' }, // Fixed power label
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             '300': {
                 price: "10",
-                image: 'images/oil_2.png', 
+                image: 'images/oil_cooled.jpeg', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '300 KVA' }, // Fixed power label
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             '350': {
                 price: "10",
-                image: 'images/oil_2.png', 
+                image: 'images/oil_3.png', 
                 specs: [
                     { label: 'Brand', value: 'Cyber' },
                     { label: 'Power', value: '350 KVA' }, // Fixed power label
